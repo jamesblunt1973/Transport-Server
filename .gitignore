@@ -1,0 +1,6 @@
+/.vs/*
+/obj/*
+/Properties/publishedprofiles/*
+/bin/*
+/logs/*
+/*.sln
