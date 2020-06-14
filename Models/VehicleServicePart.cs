@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Server.Models
 {
-    public class CarServicePart
+    public class VehicleServicePart
     {
         [Required]
         public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace Transport_Server.Models
         public int PartId { get; set; }
         
         [Required]
-        public int CarServiceId { get; set; }
+        public int VehicleServiceId { get; set; }
         
         public int NumberOfParts { get; set; }
 
@@ -23,6 +23,6 @@ namespace Transport_Server.Models
 
         public Part Part { get; set; }
 
-        public CarService CarService { get; set; }
+        public VehicleService VehicleService { get; set; }
     }
 }

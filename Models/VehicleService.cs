@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Transport_Server.Models
 {
-    public class CarService
+    public class VehicleService
     {
         [Required]
         public int Id { get; set; }
 
         [Required]
-        public int CarId { get; set; }
+        public int VehicleId { get; set; }
 
         [Required]
         public int ServiceId { get; set; }
@@ -28,13 +28,13 @@ namespace Transport_Server.Models
         public long Price { get; set; }
 
         // Navigation Properties
-        public Car Car { get; set; }
+        public Vehicle Vehicle { get; set; }
 
         public Mechanic Mechanic { get; set; }
 
         public Service Service { get; set; }
 
-        public List<CarServicePart> CarServiceParts { get; set; }
+        public List<VehicleServicePart> VehicleServiceParts { get; set; }
 
     }
 }

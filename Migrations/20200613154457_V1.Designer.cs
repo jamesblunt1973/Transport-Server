@@ -21,7 +21,7 @@ namespace Transport_Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Transport_Server.Models.Car", b =>
+            modelBuilder.Entity("Transport_Server.Models.Vehicle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace Transport_Server.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("Transport_Server.Models.CarService", b =>
+            modelBuilder.Entity("Transport_Server.Models.VehicleService", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,10 +84,10 @@ namespace Transport_Server.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("CarService");
+                    b.ToTable("VehicleService");
                 });
 
-            modelBuilder.Entity("Transport_Server.Models.CarServicePart", b =>
+            modelBuilder.Entity("Transport_Server.Models.VehicleServicePart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,7 +109,7 @@ namespace Transport_Server.Migrations
 
                     b.HasIndex("PartId");
 
-                    b.ToTable("CarServicePart");
+                    b.ToTable("VehicleServicePart");
                 });
 
             modelBuilder.Entity("Transport_Server.Models.Mechanic", b =>
@@ -171,9 +171,9 @@ namespace Transport_Server.Migrations
                     b.ToTable("Services");
                 });
 
-            modelBuilder.Entity("Transport_Server.Models.CarService", b =>
+            modelBuilder.Entity("Transport_Server.Models.VehicleService", b =>
                 {
-                    b.HasOne("Transport_Server.Models.Car", "Car")
+                    b.HasOne("Transport_Server.Models.Vehicle", "Vehicle")
                         .WithMany("CarServices")
                         .HasForeignKey("CarId");
 
@@ -186,9 +186,9 @@ namespace Transport_Server.Migrations
                         .HasForeignKey("ServiceId");
                 });
 
-            modelBuilder.Entity("Transport_Server.Models.CarServicePart", b =>
+            modelBuilder.Entity("Transport_Server.Models.VehicleServicePart", b =>
                 {
-                    b.HasOne("Transport_Server.Models.CarService", "CarService")
+                    b.HasOne("Transport_Server.Models.VehicleService", "VehicleService")
                         .WithMany("CarServiceParts")
                         .HasForeignKey("CarServiceId")
                         .OnDelete(DeleteBehavior.Cascade)

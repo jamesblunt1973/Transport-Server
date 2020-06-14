@@ -17,6 +17,6 @@ namespace Transport_Server.Models
 
         // Navigation Properties
 
-        public List<CarService> CarServices { get; set; }
+        public List<VehicleService> VehicleServices { get; set; }
     }
 }

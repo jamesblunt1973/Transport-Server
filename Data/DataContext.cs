@@ -16,13 +16,13 @@ namespace Transport_Server.Data
         }
         
         
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
         
         public DbSet<Service> Services { get; set; }
 
-        public DbSet<CarService> CarServices { get; set; }
+        public DbSet<VehicleService> VehicleServices { get; set; }
         
-        public DbSet<CarServicePart> CarServiceParts { get; set; }
+        public DbSet<VehicleServicePart> VehicleServiceParts { get; set; }
         
         public DbSet<Mechanic> Mechanics { get; set; }
 

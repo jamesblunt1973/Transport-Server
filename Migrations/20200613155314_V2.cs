@@ -8,23 +8,23 @@ namespace Transport_Server.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_CarService_Cars_CarId",
-                table: "CarService");
+                table: "VehicleService");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_CarService_Mechanic_MechanicId",
-                table: "CarService");
+                table: "VehicleService");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_CarService_Services_ServiceId",
-                table: "CarService");
+                table: "VehicleService");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_CarServicePart_CarService_CarServiceId",
-                table: "CarServicePart");
+                table: "VehicleServicePart");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_CarServicePart_Part_PartId",
-                table: "CarServicePart");
+                table: "VehicleServicePart");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Part_Part_PartId",
@@ -40,11 +40,11 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_CarServicePart",
-                table: "CarServicePart");
+                table: "VehicleServicePart");
 
             migrationBuilder.DropPrimaryKey(
                 name: "PK_CarService",
-                table: "CarService");
+                table: "VehicleService");
 
             migrationBuilder.RenameTable(
                 name: "Part",
@@ -55,11 +55,11 @@ namespace Transport_Server.Migrations
                 newName: "Mechanics");
 
             migrationBuilder.RenameTable(
-                name: "CarServicePart",
+                name: "VehicleServicePart",
                 newName: "CarServiceParts");
 
             migrationBuilder.RenameTable(
-                name: "CarService",
+                name: "VehicleService",
                 newName: "CarServices");
 
             migrationBuilder.RenameIndex(
@@ -240,11 +240,11 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.RenameTable(
                 name: "CarServices",
-                newName: "CarService");
+                newName: "VehicleService");
 
             migrationBuilder.RenameTable(
                 name: "CarServiceParts",
-                newName: "CarServicePart");
+                newName: "VehicleServicePart");
 
             migrationBuilder.RenameIndex(
                 name: "IX_Parts_PartId",
@@ -253,32 +253,32 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.RenameIndex(
                 name: "IX_CarServices_ServiceId",
-                table: "CarService",
+                table: "VehicleService",
                 newName: "IX_CarService_ServiceId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_CarServices_MechanicId",
-                table: "CarService",
+                table: "VehicleService",
                 newName: "IX_CarService_MechanicId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_CarServices_CarId",
-                table: "CarService",
+                table: "VehicleService",
                 newName: "IX_CarService_CarId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_CarServiceParts_PartId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 newName: "IX_CarServicePart_PartId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_CarServiceParts_CarServiceId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 newName: "IX_CarServicePart_CarServiceId");
 
             migrationBuilder.AlterColumn<int>(
                 name: "ServiceId",
-                table: "CarService",
+                table: "VehicleService",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -286,7 +286,7 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "MechanicId",
-                table: "CarService",
+                table: "VehicleService",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -294,7 +294,7 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "CarId",
-                table: "CarService",
+                table: "VehicleService",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -312,17 +312,17 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_CarService",
-                table: "CarService",
+                table: "VehicleService",
                 column: "Id");
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_CarServicePart",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CarService_Cars_CarId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "CarId",
                 principalTable: "Cars",
                 principalColumn: "Id",
@@ -330,7 +330,7 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CarService_Mechanic_MechanicId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "MechanicId",
                 principalTable: "Mechanic",
                 principalColumn: "Id",
@@ -338,7 +338,7 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CarService_Services_ServiceId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "ServiceId",
                 principalTable: "Services",
                 principalColumn: "Id",
@@ -346,15 +346,15 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CarServicePart_CarService_CarServiceId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 column: "CarServiceId",
-                principalTable: "CarService",
+                principalTable: "VehicleService",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CarServicePart_Part_PartId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 column: "PartId",
                 principalTable: "Part",
                 principalColumn: "Id",

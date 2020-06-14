@@ -71,7 +71,7 @@ namespace Transport_Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarService",
+                name: "VehicleService",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -107,7 +107,7 @@ namespace Transport_Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarServicePart",
+                name: "VehicleServicePart",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -122,7 +122,7 @@ namespace Transport_Server.Migrations
                     table.ForeignKey(
                         name: "FK_CarServicePart_CarService_CarServiceId",
                         column: x => x.CarServiceId,
-                        principalTable: "CarService",
+                        principalTable: "VehicleService",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -135,27 +135,27 @@ namespace Transport_Server.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarService_CarId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "CarId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarService_MechanicId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "MechanicId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarService_ServiceId",
-                table: "CarService",
+                table: "VehicleService",
                 column: "ServiceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarServicePart_CarServiceId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 column: "CarServiceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarServicePart_PartId",
-                table: "CarServicePart",
+                table: "VehicleServicePart",
                 column: "PartId");
 
             migrationBuilder.CreateIndex(
@@ -167,10 +167,10 @@ namespace Transport_Server.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CarServicePart");
+                name: "VehicleServicePart");
 
             migrationBuilder.DropTable(
-                name: "CarService");
+                name: "VehicleService");
 
             migrationBuilder.DropTable(
                 name: "Part");

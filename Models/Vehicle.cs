@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport_Server.Models
 {
-    public class Car
+    public class Vehicle
     {
         [Required]
         public int Id { get; set; }
@@ -29,6 +29,6 @@ namespace Transport_Server.Models
 
         //Navigation Properties
 
-        public List<CarService> CarServices { get; set; }
+        public List<VehicleService> VehicleServices { get; set; }
     }
 }
